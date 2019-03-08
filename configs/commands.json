@@ -1,11 +1,11 @@
 {
-    ".DS_Store": [],
     "basic": [
         "hello.js",
         "purge.js"
     ],
     "fun": [
         "leet.js",
+        "number.js",
         "trump.js"
     ],
     "info": [
@@ -23,10 +23,5 @@
     "search": [
         "google.js",
         "yt.js"
-    ],
-    "test": [
-        "client_secret.json",
-        "ytquickstart.js",
-        "ytsearch.js"
     ]
 }

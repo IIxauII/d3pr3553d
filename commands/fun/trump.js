@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     }
 
     async function personalizedMessage() {
-        requestString = baseUrl + "v1/quotes/personalized?q=" + member.user.tag;
+        requestString = baseUrl + "v1/quotes/personalized?q=" + member.user.username;
         getTrumpRequest(requestString);
     }
 
@@ -25,7 +25,6 @@ exports.run = (client, message, args) => {
         axios.get(requestString)
         .then(response => {            
             let trumpArray = [{"name": "Trump says:", "value": response.data.message}];
-
             message.channel.send(miniEmbed.createMiniEmbed(client, "0xff9900", trumpArray));
         })
         .catch(error => {
