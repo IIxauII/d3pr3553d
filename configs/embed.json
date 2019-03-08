@@ -1,0 +1,12 @@
+{
+    "color": "0xff9900",
+    "title": "You forgot the title",
+    "description": "You forgot the description",
+    "url": "https://discord.js.org/#/",
+    "thumbnail": "https://cdn.discordapp.com/avatars/327491514504708096/e0942fd6a3fc98880f02e2ce90ab4d54.png",
+    "image": "https://cdn.discordapp.com/avatars/327491514504708096/e0942fd6a3fc98880f02e2ce90ab4d54.png",
+    "fields" : [{"name": "You forgot a field title", "value": "You forgot a field value"}],
+    "footer": {
+        "text": "powered by © d3pr3353d"
+    }
+}

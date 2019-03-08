@@ -1,0 +1,11 @@
+{
+    "_readMe": "Rename this file to admin.json and delete this line",
+    "token": "Replace this string with your bot token",
+    "admins": {
+        "user1": "Replace this string with your user1 ID",
+        "user2": "Replace this string with your user2 ID"
+    },
+    "apis": {
+        "youtube": "Replace this string with your youtube api key"
+    }
+}

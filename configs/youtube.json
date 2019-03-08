@@ -1,0 +1,13 @@
+{
+    "config": {
+        "maxResults": 5
+    },
+    "embed": {
+        "color": "0xf10f01",
+        "title": "YouTube Search",
+        "description": "This is your search result",
+        "url": "https://www.youtube.com/",
+        "thumbnail": "https://i.imgur.com/RSq7V07.png",
+        "image": "https://i.imgur.com/RSq7V07.png"
+    }
+}

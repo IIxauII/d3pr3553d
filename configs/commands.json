@@ -1,0 +1,25 @@
+{
+    "basic": [
+        "hello.js",
+        "purge.js"
+    ],
+    "fun": [
+        "leet.js"
+    ],
+    "info": [
+        "infog.js",
+        "infou.js",
+        "readjson.js"
+    ],
+    "music": [
+        "add.js",
+        "join.js",
+        "leave.js",
+        "play.js",
+        "queue.js"
+    ],
+    "search": [
+        "google.js",
+        "yt.js"
+    ]
+}
