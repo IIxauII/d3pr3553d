@@ -6,6 +6,7 @@
         "user2": "Replace this string with your user2 ID"
     },
     "apis": {
-        "youtube": "Replace this string with your youtube api key"
+        "youtube": "Replace this string with your youtube api key",
+        "nasa": "Get your key here -> https://api.nasa.gov/#getting-started"
     }
 }

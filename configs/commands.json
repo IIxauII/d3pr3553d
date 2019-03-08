@@ -5,6 +5,7 @@
     ],
     "fun": [
         "leet.js",
+        "mars.js",
         "number.js",
         "trump.js"
     ],
