@@ -5,7 +5,8 @@
         "purge.js"
     ],
     "fun": [
-        "leet.js"
+        "leet.js",
+        "trump.js"
     ],
     "info": [
         "infog.js",
