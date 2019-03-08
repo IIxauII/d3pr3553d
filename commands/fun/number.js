@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     let amountArgs = args.length;
 
     if (args[0] && args[0] === "man") {
-        manual();
+        return manual();        
     }
     
     if (amountArgs === 3) {
@@ -23,11 +23,11 @@ exports.run = (client, message, args) => {
         type = "trivia";
         number = "random";
     } else {
-        manual();
+        return manual();
     }
 
     if (type != "trivia" && type != "math" && type != "date" && type != "year") {
-        manual();
+        return manual();
     }
 
     requestString = baseUrl + number + "/" + type;
@@ -40,7 +40,6 @@ exports.run = (client, message, args) => {
                         {"name": "Example 1", "value": "!xnumber"}, {"name": "Example 2", "value": "!xnumber trivia 42"},
                         {"name": "Example 3", "value": "!xnumber date 9 11"}];
         message.channel.send(miniEmbed.createMiniEmbed(client, "0x327baa", numberArray));
-        return;
     }
 
     async function getRandomNumberFact(requestString) {
