@@ -3,8 +3,8 @@ const adminConfig = require('../configs/admin.json');
 const commandsObj = require('../configs/commands.json');
 
 let prefix = mainConfig.prefix;
-let admin1 = adminConfig.admins.xau; //user1
-let admin2 = adminConfig.admins.flava; //user2
+let admin1 = adminConfig.admins.user1; //user1
+let admin2 = adminConfig.admins.user2; //user2
 
 exports.run = (client,  message) => {
     if (message.author.bot) return;

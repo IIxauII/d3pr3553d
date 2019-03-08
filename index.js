@@ -4,9 +4,7 @@ const client = new discord.Client();
 const mainConfig = require('./configs/main.json');
 const adminConfig = require('./configs/admin.json');
 
-let prefix = mainConfig.prefix;
 let token = adminConfig.token;
-let adminId1 = adminConfig.adminId;
 
 //for different queues & voice channels
 global.servers = {};

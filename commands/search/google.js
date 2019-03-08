@@ -2,7 +2,6 @@
 const google = require("google");
 const miniEmbed = require("../../lib/miniEmbed.js");
 const argsToString = require("../../lib/argsToString.js");
-const adminConfig = require("../configs/admin.json");
 
 exports.run = (client, message, args) => {
     google.resultsPerPage = 5;

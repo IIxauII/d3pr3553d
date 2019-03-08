@@ -1,4 +1,5 @@
 {
+    ".DS_Store": [],
     "basic": [
         "hello.js",
         "purge.js"
@@ -21,5 +22,10 @@
     "search": [
         "google.js",
         "yt.js"
+    ],
+    "test": [
+        "client_secret.json",
+        "ytquickstart.js",
+        "ytsearch.js"
     ]
 }

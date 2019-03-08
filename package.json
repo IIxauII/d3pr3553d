@@ -13,13 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "1337": "^1.0.1",
+    "better-youtube-api": "^0.3.7",
     "discord.js": "^11.4.2",
     "ffmpeg-binaries": "^4.0.0",
     "google": "^2.1.0",
-    "hex2dec": "^1.1.1",
+    "hex2dec": "^1.1.2",
     "is-image-url": "^1.1.8",
     "opusscript": "0.0.6",
-    "youtube-search": "^1.1.4",
     "ytdl-core": "^0.29.1"
   }
 }
