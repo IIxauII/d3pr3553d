@@ -19,14 +19,14 @@ exports.run = (client, message, args) => {
     } else if (amountArgs === 1) {
         type = args[0];
         number = "random";
-    } else if (!amountArgs) {
+    } else if (!amountArgs && amountArgs != 0) {
         type = "trivia";
         number = "random";
     } else {
         manual();
     }
 
-    if (type != "trivia" && type != "math" && type != "date" && type != "year" || !type) {
+    if (type != "trivia" && type != "math" && type != "date" && type != "year") {
         manual();
     }
 
