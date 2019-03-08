@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "1337": "^1.0.1",
+    "axios": "^0.18.0",
     "better-youtube-api": "^0.3.7",
     "discord.js": "^11.4.2",
     "ffmpeg-binaries": "^4.0.0",
