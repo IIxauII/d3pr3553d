@@ -1,3 +1,4 @@
+const randomInt = require("../../lib/randomInt.js");
 const miniEmbed = require("../../lib/miniEmbed.js");
 const imgEmbed = require("../../lib/imgEmbed.js");
 const axios = require('axios');
@@ -13,6 +14,14 @@ exports.run = (client, message, args) => {
     if ("manifests".includes(args[0])) {        
         rover = validateRover(args[1]);
         endpoint = "manifests/" + rover;
+        requestString = baseUrl + endpoint + "?api_key=" + nasaKey;
+        getManifest(requestString);
+    } else {
+        rover = validateRover(args[0]);
+        endpoint = "rovers/" + rover + "/photos";
+        query = "?sol=" + args[1] + "&api_key=" + nasaKey;
+        requestString = baseUrl + endpoint + query;
+        getRandomImage(requestString);
     }
 
     function validateRover(arg) {
@@ -25,9 +34,16 @@ exports.run = (client, message, args) => {
         return rover;
     }
 
-    requestString = baseUrl + endpoint + "?api_key=" + nasaKey;
-
-    getManifest(requestString);
+    async function getRandomImage(requestString) {
+        axios.get(requestString)
+            .then(response => {
+                let img = response.data.photos[randomInt.getRandomInt(0, response.data.photos.length - 1)].img_src;
+                message.channel.send(imgEmbed.createImgEmbed(client, "0xbbddff", img));
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }   
 
     async function getManifest(requestString) {
         axios.get(requestString)
