@@ -24,6 +24,9 @@
         "play.js",
         "queue.js"
     ],
+    "nsfw": [
+        "danbooru.js"
+    ],
     "search": [
         "google.js",
         "yt.js"
