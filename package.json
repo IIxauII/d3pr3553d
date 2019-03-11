@@ -13,14 +13,17 @@
   "license": "ISC",
   "dependencies": {
     "1337": "^1.0.1",
+    "archiver": "^3.0.0",
     "axios": "^0.18.0",
     "better-youtube-api": "^0.3.7",
     "discord.js": "^11.4.2",
+    "download": "^7.1.0",
     "ffmpeg-binaries": "^4.0.0",
     "google": "^2.1.0",
     "hex2dec": "^1.1.2",
     "is-image-url": "^1.1.8",
     "opusscript": "0.0.6",
+    "path": "^0.12.7",
     "ytdl-core": "^0.29.1"
   }
 }

@@ -1,3 +1,7 @@
 /node_modules/
 /configs/admin.json
 /commands/test/
+/media/downloads/*.jpg
+/media/downloads/*.png
+/media/downloads/*.gif
+/media/compressed/*

@@ -37,6 +37,7 @@ exports.run = (client, message, args) => {
     async function getRandomImage(requestString) {
         axios.get(requestString)
             .then(response => {
+                console.log(requestString);
                 let img = response.data.photos[randomInt.getRandomInt(0, response.data.photos.length - 1)].img_src;
                 message.channel.send(imgEmbed.createImgEmbed(client, "0xbbddff", img));
             })
