@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     google.resultsPerPage = 5;
     let fieldArray = [];
 
-    google(argsToString.convert(args), function (error, result) {
+    google(argsToString.convert(args, " "), function (error, result) {
         if (error) console.error(error);
 
         for (let x = 0; x < result.links.length; x++) {

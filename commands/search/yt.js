@@ -8,7 +8,7 @@ const youtube = new YouTube(apiKey);
 let maxResults = ytConfig.config.maxResults;
 
 exports.run = (client, message, args) => {
-    let string = argsToString.convert(args);
+    let string = argsToString.convert(args, " ");
 
     async function searchVideos(string) {
         await youtube.searchVideos(string, maxResults)

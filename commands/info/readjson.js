@@ -1,4 +1,3 @@
-const argsToString = require("../../lib/argsToString.js");
 const codeEmbed = require("../../lib/codeEmbed.js");
 const fs = require('fs');
 
