@@ -1,5 +1,4 @@
 {
-    ".DS_Store": [],
     "basic": [
         "hello.js",
         "purge.js"
@@ -12,6 +11,7 @@
     ],
     "info": [
         "emojis.js",
+        "getinv.js",
         "guilds.js",
         "infog.js",
         "infou.js",
@@ -27,11 +27,5 @@
     "search": [
         "google.js",
         "yt.js"
-    ],
-    "test": [
-        "client_secret.json",
-        "test.js",
-        "ytquickstart.js",
-        "ytsearch.js"
     ]
 }

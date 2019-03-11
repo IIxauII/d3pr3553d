@@ -11,9 +11,9 @@ output.on('close', function () {
     console.log(archive.pointer() + ' total bytes');
     console.log('archiver has been finalized and the output file descriptor has closed.');
 });
-archive.on('error', function(err){
+/* archive.on('error', function(err){
     throw err;
-});
+}); */
 archive.pipe(output);
 
 fs.readdir("media/downloads/", (err, files) => {
@@ -63,5 +63,5 @@ exports.run = (client, message, args) => {
         archive.finalize();
         message.channel.send("Emojis:");
         message.channel.sendFile('media/compressed/example.zip', 'example.zip');
-    }, 2000);    
+    }, 4000);    
 }
