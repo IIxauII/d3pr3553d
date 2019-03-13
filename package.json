@@ -24,6 +24,7 @@
     "is-image-url": "^1.1.8",
     "opusscript": "0.0.6",
     "path": "^0.12.7",
+    "time-convert": "0.0.2",
     "ytdl-core": "^0.29.1"
   }
 }
