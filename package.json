@@ -26,5 +26,10 @@
     "path": "^0.12.7",
     "time-convert": "0.0.2",
     "ytdl-core": "^0.29.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }

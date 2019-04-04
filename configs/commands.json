@@ -1,4 +1,5 @@
 {
+    ".DS_Store": [],
     "basic": [
         "hello.js",
         "purge.js"
@@ -15,7 +16,8 @@
         "guilds.js",
         "infog.js",
         "infou.js",
-        "readjson.js"
+        "readjson.js",
+        "uptime.js"
     ],
     "music": [
         "add.js",
@@ -30,5 +32,16 @@
     "search": [
         "google.js",
         "yt.js"
+    ],
+    "spelling": [
+        "spelladd.js",
+        "spellcheck.js",
+        "spellsub.js"
+    ],
+    "test": [
+        "client_secret.json",
+        "test.js",
+        "ytquickstart.js",
+        "ytsearch.js"
     ]
 }
