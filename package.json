@@ -29,13 +29,10 @@
     "ytdl-core": "^0.29.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "image-downloader": "^3.4.2",
-    "tesseract.js": "^1.0.14"
-=======
+    "tesseract.js": "^1.0.14",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"
->>>>>>> 67c9e598fb7f72a0310d8ee6152f3b547ab396d6
   }
 }
