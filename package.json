@@ -25,10 +25,17 @@
     "is-image-url": "^1.1.8",
     "opusscript": "0.0.6",
     "path": "^0.12.7",
+    "time-convert": "0.0.2",
     "ytdl-core": "^0.29.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "image-downloader": "^3.4.2",
     "tesseract.js": "^1.0.14"
+=======
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+>>>>>>> 67c9e598fb7f72a0310d8ee6152f3b547ab396d6
   }
 }

@@ -5,3 +5,5 @@
 /media/downloads/*.png
 /media/downloads/*.gif
 /media/compressed/*
+eng.traineddata
+lib/ocrImage.js
