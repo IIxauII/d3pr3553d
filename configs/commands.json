@@ -30,5 +30,10 @@
     "search": [
         "google.js",
         "yt.js"
+    ],
+    "spelling": [
+        "spelladd.js",
+        "spellcheck.js",
+        "spellsub.js"
     ]
 }
