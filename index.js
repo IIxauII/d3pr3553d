@@ -9,7 +9,7 @@ const { token } = adminConfig;
 // for different queues & voice channels
 global.servers = {};
 
-fs.readdir("./events/", (err, files) => {
+fs.readdir('./events/', (err, files) => {
     if (err) return console.error(err);
     files.forEach((file) => {
         const eventFunction = require(`./events/${file}`);

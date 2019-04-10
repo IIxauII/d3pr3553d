@@ -17,6 +17,7 @@ module.exports = {
       "import/newline-after-import": 'off',
       "import/no-dynamic-require": 'off',
       "global-require": 'off',
-      "indent": ["error", 4]
+      "indent": ["error", 4],
+      "no-console": 'off' //for development purposes
   },
 };
