@@ -1,5 +1,4 @@
 {
-    ".DS_Store": [],
     "basic": [
         "hello.js",
         "purge.js"
@@ -37,14 +36,5 @@
         "spelladd.js",
         "spellcheck.js",
         "spellsub.js"
-<<<<<<< HEAD
-=======
-    ],
-    "test": [
-        "client_secret.json",
-        "test.js",
-        "ytquickstart.js",
-        "ytsearch.js"
->>>>>>> 67c9e598fb7f72a0310d8ee6152f3b547ab396d6
     ]
 }

@@ -28,7 +28,7 @@ exports.run = (client,  message) => {
                         let formattedText = result.text.replace(/\n/g," ");
                         formattedText = formattedText.slice(0, -2);
                         let textArray = formattedText.split(" ");
-                        let pauseTime = (textArray.length * 1000) / 2.5;
+                        let pauseTime = (textArray.length * 1000) / 3;
                         console.log(formattedText);
                         console.log(pauseTime + "ms");
                         setTimeout(function() {

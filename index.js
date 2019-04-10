@@ -1,22 +1,20 @@
 const discord = require('discord.js');
+const fs = require('fs');
 const client = new discord.Client();
 
-const mainConfig = require('./configs/main.json');
 const adminConfig = require('./configs/admin.json');
 
-let token = adminConfig.token;
+const { token } = adminConfig;
 
-//for different queues & voice channels
+// for different queues & voice channels
 global.servers = {};
-
-const fs = require('fs');
 
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
-    files.forEach(file => {
-        let eventFunction = require(`./events/${file}`);
-        let eventName = file.split(".")[0];
-        client.on(eventName, (...args) => eventFunction.run(client, ...args));        
+    files.forEach((file) => {
+        const eventFunction = require(`./events/${file}`);
+        const eventName = file.split('.')[0];
+        client.on(eventName, (...args) => eventFunction.run(client, ...args));
     });
 });
 
