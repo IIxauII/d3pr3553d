@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
 
     if (!member) { return message.reply('Duh u forgot to mention a user :kek:'); }
 
-/*     let bot;
+    /*     let bot;
     if (member.user.bot === true) {
         bot = 'Yes';
     } else {

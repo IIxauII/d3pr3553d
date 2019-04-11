@@ -6,4 +6,3 @@ exports.run = (client, message, args) => {
     const toLeet = argsToString.convert(args, ' ');
     message.channel.send(leet(toLeet));
 };
-
