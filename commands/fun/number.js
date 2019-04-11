@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
         message.channel.send(miniEmbed.createMiniEmbed(client, '0x327baa', numberArray));
     }
 
-    async function getRandomNumberFact(requestString) {
+    async function getRandomNumberFact() {
         axios.get(requestString)
             .then((response) => {
                 const numberArray = [{ name: `${number} - ${type}`, value: response.data }];
@@ -44,7 +44,7 @@ exports.run = (client, message, args) => {
         // eslint-disable-next-line prefer-destructuring
         type = args[0];
         number = 'random';
-    } else if (!amountArgs && amountArgs != 0) {
+    } else if (!amountArgs && amountArgs !== 0) {
         type = 'trivia';
         number = 'random';
     } else {

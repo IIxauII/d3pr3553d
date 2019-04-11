@@ -1,10 +1,10 @@
-const miniEmbed = require("../../lib/miniEmbed.js");
+const miniEmbed = require('../../lib/miniEmbed.js');
 
 exports.run = (client, message, args) => {
-    let amount = parseInt(args[0], 10);
+    const amount = parseInt(args[0], 10);
 
-    if(!amount || amount < 1 || amount > 10) {
-        return message.reply("Use a number between 1 and 10");
+    if (!amount || amount < 1 || amount > 10) {
+        return message.reply('Use a number between 1 and 10');
     }
 
     message.channel.fetchMessages({
@@ -13,20 +13,20 @@ exports.run = (client, message, args) => {
         message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
     });
 
-    let fieldArray = [{"name": "Purge information", "value": `Deleted ${amount} messages`}];
+    const fieldArray = [{ name: 'Purge information', value: `Deleted ${amount} messages` }];
     let responseMessage;
-    setTimeout(function() {
-        message.channel.send(miniEmbed.createMiniEmbed(client, "", fieldArray));
-        
+    setTimeout(() => {
+        message.channel.send(miniEmbed.createMiniEmbed(client, '', fieldArray));
+
         message.channel.fetchMessages({
             limit: 1,
         }).then((messages) => {
             responseMessage = messages;
         });
     }, 500);
-    
 
-    setTimeout(function() {        
+
+    setTimeout(() => {
         message.channel.bulkDelete(responseMessage).catch(error => console.log(error.stack));
     }, 3000);
-}
+};

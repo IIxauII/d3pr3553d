@@ -31,5 +31,5 @@ exports.run = (client, message, args) => {
         personalizedMessage();
     } else {
         nonPersonalizedMessage();
-    }    
+    }
 };

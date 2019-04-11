@@ -26,7 +26,10 @@ exports.run = (client, message, args) => {
         axios.get(requestString)
             .then((response) => {
                 console.log(requestString);
-                const img = response.data.photos[randomInt.getRandomInt(0, response.data.photos.length - 1)].img_src;
+                const img = response
+                    .data
+                    .photos[randomInt.getRandomInt(0, response.data.photos.length - 1)]
+                    .img_src;
                 message.channel.send(imgEmbed.createImgEmbed(client, '0xbbddff', img));
             })
             .catch((error) => {

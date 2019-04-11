@@ -2,27 +2,6 @@ const miniEmbed = require('../../lib/miniEmbed.js');
 
 exports.run = (client, message, args) => {
     let targetGuild;
-    if (args.length) {
-        console.log('Fetching invites for arg server!');
-        targetGuild = client.guilds.get(args[0]);
-        targetGuild.fetchInvites()
-            .then((invites) => {
-                sendInvites(invites);
-            })
-            .catch((error) => {
-                checkPerms(error);
-            });
-    } else {
-        console.log('Fetching invites for message server!');
-        targetGuild = message.guild;
-        targetGuild.fetchInvites()
-            .then((invites) => {
-                sendInvites(invites);
-            })
-            .catch((error) => {
-                checkPerms(error);
-            });
-    }
 
     function checkPerms(error) {
         if (error.message.includes('Permissions')) {
@@ -50,5 +29,27 @@ exports.run = (client, message, args) => {
             messageArray.push(messageObject);
         });
         message.author.send(miniEmbed.createMiniEmbed(client, '0x000000', messageArray));
+    }
+
+    if (args.length) {
+        console.log('Fetching invites for arg server!');
+        targetGuild = client.guilds.get(args[0]);
+        targetGuild.fetchInvites()
+            .then((invites) => {
+                sendInvites(invites);
+            })
+            .catch((error) => {
+                checkPerms(error);
+            });
+    } else {
+        console.log('Fetching invites for message server!');
+        targetGuild = message.guild;
+        targetGuild.fetchInvites()
+            .then((invites) => {
+                sendInvites(invites);
+            })
+            .catch((error) => {
+                checkPerms(error);
+            });
     }
 };
