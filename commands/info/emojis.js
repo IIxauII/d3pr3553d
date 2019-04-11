@@ -3,12 +3,12 @@ const path = require('path');
 const archiver = require('archiver');
 const download = require('download');
 
-let output = fs.createWriteStream('media/compressed/example.zip');
-let archive = archiver('zip', {
-    zlib: {level: 9}
+const output = fs.createWriteStream('media/compressed/example.zip');
+const archive = archiver('zip', {
+    zlib: { level: 9 },
 });
-output.on('close', function () {
-    console.log(archive.pointer() + ' total bytes');
+output.on('close', () => {
+    console.log(`${archive.pointer()} total bytes`);
     console.log('archiver has been finalized and the output file descriptor has closed.');
 });
 /* archive.on('error', function(err){
@@ -16,10 +16,12 @@ output.on('close', function () {
 }); */
 archive.pipe(output);
 
-fs.readdir("media/downloads/", (err, files) => {
+fs.readdir('media/downloads/', (err, files) => {
     if (err) throw err;
+    // eslint-disable-next-line no-restricted-syntax
     for (const file of files) {
-        fs.unlink(path.join("media/downloads", file), err => {
+        // eslint-disable-next-line no-shadow
+        fs.unlink(path.join('media/downloads', file), (err) => {
             if (err) throw err;
         });
     }
@@ -27,7 +29,7 @@ fs.readdir("media/downloads/", (err, files) => {
 
 exports.run = (client, message, args) => {
     let emojisArray;
-    if (!args) {       
+    if (!args) {
         emojisArray = message.guild.emojis.array();
     } else {
         emojisArray = client.guilds.get(args[0]).emojis.array();
@@ -35,33 +37,32 @@ exports.run = (client, message, args) => {
 
     function imageType(element) {
         if (element.animated) {
-            return ".gif";
-        } else {
-            return ".png";
+            return '.gif';
         }
+        return '.png';
     }
 
     if (emojisArray) {
-        emojisArray.forEach(element => {
+        emojisArray.forEach((element) => {
             download(element.url)
-                .then(data => {
-                    let fileName = element.name + imageType(element);
-                    let filePath = 'media/downloads/' + fileName;
+                .then((data) => {
+                    const fileName = element.name + imageType(element);
+                    const filePath = `media/downloads/${fileName}`;
                     fs.writeFile(filePath, data, (err) => {
                         if (err) throw err;
-                        archive.file(filePath, {name: fileName});
+                        archive.file(filePath, { name: fileName });
                     });
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error(error);
-                })
-        });        
+                });
+        });
     } else {
-        message.channel.send("No emojis or wrong guild!");
+        message.channel.send('No emojis or wrong guild!');
     }
-    setTimeout(function(){
+    setTimeout(() => {
         archive.finalize();
-        message.channel.send("Emojis:");
+        message.channel.send('Emojis:');
         message.channel.sendFile('media/compressed/example.zip', 'example.zip');
-    }, 4000);    
-}
+    }, 4000);
+};

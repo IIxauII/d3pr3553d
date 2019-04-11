@@ -19,6 +19,7 @@ module.exports = {
         "global-require": 'off',
         "indent": ["error", 4],
         "no-console": 'off', //for development purposes
-        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "consistent-return": 'off',
     },
 };
