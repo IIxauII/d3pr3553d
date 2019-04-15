@@ -3,13 +3,16 @@ const mainConfig = require('../configs/main.json');
 const adminConfig = require('../configs/admin.json');
 const commandsObj = require('../configs/commands.json');
 
-const { prefix } = mainConfig;
+const {
+    prefix,
+} = mainConfig;
 const admin1 = adminConfig.admins.user1; // user1
 const admin2 = adminConfig.admins.user2; // user2
 
 exports.run = (client, message) => {
     // console.log(message.author.id);
-    if (message.author.id === 474670778248331276) {
+    // eslint-disable-next-line eqeqeq
+    if (message.author.id == 474670778248331276) {
         const attachments = message.attachments.array();
         if (attachments && attachments.length > 0) {
             attachments.forEach((attachment) => {
@@ -21,17 +24,19 @@ exports.run = (client, message) => {
                         lang: 'eng',
                     })
                         .then((result) => {
-                            console.log(result.confidence);
+                            console.log(result.text);
+                            console.log(result.confidence, '% confident');
                             // let testChannel = client.channels.get('563804543645777921');
                             // testChannel.send(imgUrl);
-                            // testChannel.send(result.text);
                             // testChannel.send(result.confidence);
                             let formattedText = result.text.replace(/\n/g, ' ');
                             formattedText = formattedText.slice(0, -2);
                             const textArray = formattedText.split(' ');
-                            const pauseTime = (textArray.length * 1000) / 3;
-                            console.log(formattedText);
-                            console.log(`${pauseTime}ms`);
+                            const pauseTime = (textArray.length * 1000) / 4;
+                            const wpm = (textArray.length / (pauseTime / 1000)) * 60;
+                            console.log(textArray.length, 'words');
+                            console.log(pauseTime, 'ms to wait');
+                            console.log(wpm, 'wpm');
                             setTimeout(() => {
                                 message.channel.send(formattedText);
                             }, pauseTime);
@@ -45,7 +50,7 @@ exports.run = (client, message) => {
     if (message.content.indexOf(prefix) !== 0) return;
     if (message.author.id !== admin1 && message.author.id !== admin2) return;
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    /* const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     for (const key in commandsObj) {
@@ -66,5 +71,5 @@ exports.run = (client, message) => {
                 }
             }
         }
-    }
+    } */
 };

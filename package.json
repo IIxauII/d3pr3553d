@@ -19,6 +19,7 @@
     "axios": "^0.18.0",
     "better-youtube-api": "^0.3.7",
     "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
     "download": "^7.1.0",
     "ffmpeg-binaries": "^4.0.0",
     "google": "^2.1.0",
