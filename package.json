@@ -16,7 +16,7 @@
   "dependencies": {
     "1337": "^1.0.1",
     "archiver": "^3.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "better-youtube-api": "^0.3.7",
     "discord.js": "^11.4.2",
     "download": "^7.1.0",
