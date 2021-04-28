@@ -17,4 +17,5 @@ exports.run = (client, message, args) => {
     } else {
         message.reply('Please enter a valid youtube url!');
     }
+    console.log(servers);
 };

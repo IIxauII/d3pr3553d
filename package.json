@@ -16,11 +16,14 @@
   "dependencies": {
     "1337": "^1.0.1",
     "archiver": "^3.0.0",
+    "avconv": "^3.1.0",
     "axios": "^0.18.0",
     "better-youtube-api": "^0.3.7",
     "discord.js": "^12",
     "download": "^7.1.0",
+    "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
+    "ffmpeg-static": "^4.3.0",
     "google": "^2.1.0",
     "hex2dec": "^1.1.2",
     "is-image-url": "^1.1.8",
@@ -28,7 +31,7 @@
     "path": "^0.12.7",
     "tesseract.js": "^1.0.14",
     "time-convert": "0.0.2",
-    "ytdl-core": "^0.29.1"
+    "ytdl-core": "^4.5.0"
   },
   "devDependencies": {
     "image-downloader": "^3.4.2",
