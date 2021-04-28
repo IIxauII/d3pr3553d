@@ -1,6 +1,8 @@
 const miniEmbed = require('../../lib/miniEmbed.js');
 
 exports.run = (client, message, args) => {
+    const sendToChannelString = 'here';
+    let sendPrivate = true;
     let targetGuild;
 
     function checkPerms(error) {
@@ -22,34 +24,52 @@ exports.run = (client, message, args) => {
             messageObject.name = `Invite ${x}`;
             x += 1;
             messageObject.value = `url: ${element.url}${nbsp
-            }expires: ${element.expiresAt}${nbsp
-            }code: ${element.code}${nbsp
-            }inviter: ${element.inviter.username}${nbsp
-            }uses: ${element.uses}`;
+                }expires: ${element.expiresAt}${nbsp
+                }code: ${element.code}${nbsp
+                }inviter: ${element.inviter.username}${nbsp
+                }uses: ${element.uses}`;
             messageArray.push(messageObject);
         });
-        message.author.send(miniEmbed.createMiniEmbed(client, '0x000000', messageArray));
+
+        if (sendPrivate) {
+            message.author.send(miniEmbed.createMiniEmbed(client, '0x000000', messageArray));
+        } else {
+            message.channel.send(miniEmbed.createMiniEmbed(client, '0x000000', messageArray));
+        }
+
+    }
+
+    function fetchInvitesForGuild(targetGuild) {
+        targetGuild.fetchInvites()
+            .then((invites) => {
+                sendInvites(invites);
+            })
+            .catch((error) => {
+                checkPerms(error);
+            });
     }
 
     if (args.length) {
-        console.log('Fetching invites for arg server!');
-        targetGuild = client.guilds.get(args[0]);
-        targetGuild.fetchInvites()
-            .then((invites) => {
-                sendInvites(invites);
-            })
-            .catch((error) => {
-                checkPerms(error);
-            });
+        if (args[0] && sendToChannelString.includes(args[0])) {
+            sendPrivate = false;
+            if (args[1]) {
+                // case: !xgetinv here 1234
+                fetchInvitesForGuild(client.guilds.resolve(args[1]))
+            } else {
+                // case !xgetinv here
+                fetchInvitesForGuild(message.guild);
+            }
+        } else if (args[1] && sendToChannelString.includes(args[1])) {
+            sendPrivate = false;
+            // case !xgetinv 1234 here
+            fetchInvitesForGuild(client.guilds.resolve(args[0]));
+        } else {
+            // case !xgetinv 1234
+            fetchInvitesForGuild(client.guilds.resolve(args[0]));
+        }
+
     } else {
-        console.log('Fetching invites for message server!');
-        targetGuild = message.guild;
-        targetGuild.fetchInvites()
-            .then((invites) => {
-                sendInvites(invites);
-            })
-            .catch((error) => {
-                checkPerms(error);
-            });
+        // case !xgetinv
+        fetchInvitesForGuild(message.guild);
     }
 };

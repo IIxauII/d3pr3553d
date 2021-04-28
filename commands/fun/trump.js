@@ -2,8 +2,8 @@ const axios = require('axios');
 const miniEmbed = require('../../lib/miniEmbed.js');
 
 exports.run = (client, message, args) => {
-    const member = message.mentions.members.first() || message.guild.members.get(args[0]);
     const baseUrl = 'https://api.whatdoestrumpthink.com/api/';
+    let member = message.mentions.members.first();
     let requestString = '';
 
     async function getTrumpRequest() {
@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
                 message.channel.send(miniEmbed.createMiniEmbed(client, '0xff9900', trumpArray));
             })
             .catch((error) => {
-                console.log(error);
+                console.error(error);
             });
     }
 
@@ -29,6 +29,16 @@ exports.run = (client, message, args) => {
 
     if (member) {
         personalizedMessage();
+    } else if (args[0]) {
+        message.guild.members.fetch(args[0])
+            .then((res) => {
+                member = res;
+                personalizedMessage();
+            })
+            .catch((err) => {
+                console.error(err);
+                nonPersonalizedMessage();
+            })
     } else {
         nonPersonalizedMessage();
     }

@@ -28,4 +28,6 @@ exports.run = (client) => {
     fs.writeFileSync('./configs/commands.json', objectString);
 
     console.log(`Ready! Currently in ${client.channels.size} channels on ${client.guilds.size} servers\n${client.users.size} users`);
+    console.log(`${client.user.username}`);
+    console.log(`${client.user.tag}`);
 };

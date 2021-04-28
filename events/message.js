@@ -8,6 +8,7 @@ const admin1 = adminConfig.admins.user1; // user1
 const admin2 = adminConfig.admins.user2; // user2
 
 exports.run = (client, message) => {
+    console.log('recieved a message!');
     // console.log(message.author.id);
     if (message.author.id === 474670778248331276) {
         const attachments = message.attachments.array();
@@ -44,6 +45,7 @@ exports.run = (client, message) => {
     if (message.author.bot) return;
     if (message.content.indexOf(prefix) !== 0) return;
     if (message.author.id !== admin1 && message.author.id !== admin2) return;
+    //console.log('reached debug 1');
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();

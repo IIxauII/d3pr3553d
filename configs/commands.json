@@ -1,6 +1,7 @@
 {
     "basic": [
         "hello.js",
+        "help.js",
         "purge.js"
     ],
     "fun": [
