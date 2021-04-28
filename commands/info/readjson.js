@@ -14,9 +14,9 @@ exports.run = (client, message, args) => {
         files.forEach((file) => {
             // eslint-disable-next-line prefer-destructuring
             fileName = file.split('.')[0];
-            if (args[0] === fileName && args[0] !== 'admin') { // prevent displaying of api tokens etc
+            if (fileName.includes(args[0]) && args[0] !== 'admin') { // prevent displaying of api tokens etc
                 found = true;
-                const jsonObj = require(`../../configs/${args[0]}.json`); // meeds to be made bulletproof
+                const jsonObj = require(`../../configs/${fileName}.json`); // meeds to be made bulletproof
                 const jsonString = JSON.stringify(jsonObj, null, 4);
                 message.channel.send(codeEmbed.makeString(jsonString, 'json'));
             }

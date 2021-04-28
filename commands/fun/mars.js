@@ -28,7 +28,7 @@ exports.run = (client, message, args) => {
     async function getRandomImage() {
         axios.get(requestString)
             .then((response) => {
-                console.log(requestString);
+                //console.log(requestString);
                 const photos = response
                     .data
                     .photos[randomInt.getRandomInt(0, response.data.photos.length - 1)];
@@ -48,7 +48,7 @@ exports.run = (client, message, args) => {
         axios.get(requestString)
             .then((response) => {
                 const manifest = response.data.photo_manifest;
-                console.log(manifest);
+                //console.log(manifest);
                 const manifestArray = [{ name: 'rover', value: manifest.name },
                     { name: 'launch date', value: manifest.launch_date },
                     { name: 'landing date', value: manifest.landing_date },

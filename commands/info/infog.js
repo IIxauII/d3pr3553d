@@ -3,7 +3,6 @@ const color = require('../../configs/colors.json');
 
 // eslint-disable-next-line no-unused-vars
 exports.run = (client, message, args) => {
-    //message.delete();
     const g = message.guild;
     const guildDataArray = [];
 
