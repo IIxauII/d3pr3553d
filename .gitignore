@@ -5,5 +5,9 @@
 /media/downloads/*.png
 /media/downloads/*.gif
 /media/compressed/*
+/media/lol/img/
+/media/lol/profileicon*
+/media/lol/champion*
+/media/lol/custom/*.png
 eng.traineddata
 lib/ocrImage.js
