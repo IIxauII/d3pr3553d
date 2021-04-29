@@ -33,13 +33,17 @@ exports.run = (client, message, args) => {
                 channels: mgFetchChannelsOfGuild(),
             }).then((guild) => {
                 mgSaveMirrorGuildToJson(guild);
-                guild.channels.cache.first().createInvite()
+                // find channel on mirror server which is of type text to use as invite channel
+                let invChannel = guild.channels.cache.find((ch) => {
+                    return ch.type === 'text';
+                });
+                invChannel.createInvite()
                     .then((invite) => {
                         console.log(`Created an invite with the code: ${invite.code}`);
                         message.channel.send(`https://discord.gg/${invite.code}`);
                     })
                     .catch((err) => {
-                        console.err(err);
+                        console.error(err);
                     })
             }).catch((err) => {
                 console.error(err);
