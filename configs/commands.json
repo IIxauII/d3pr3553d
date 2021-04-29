@@ -22,6 +22,11 @@
         "readjson.js",
         "uptime.js"
     ],
+    "lol": [
+        "lolplayer.js",
+        "lolrotation.js",
+        "loltest.js"
+    ],
     "mirroring": [
         "mirrorguild.js"
     ],

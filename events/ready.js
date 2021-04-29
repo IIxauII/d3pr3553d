@@ -20,14 +20,10 @@ exports.run = (client) => {
         fileArray = [];
     });
 
-    /* console.log("---");
-    console.log(object);
-    console.log("---"); */
-
     const objectString = JSON.stringify(object, null, 4);
     fs.writeFileSync('./configs/commands.json', objectString);
 
-    console.log(`Ready! Currently in ${client.channels.size} channels on ${client.guilds.size} servers\n${client.users.size} users`);
+    console.log(`Ready! Currently in ${client.channels.cache.array().length} channels on ${client.guilds.cache.array().length} servers\n${client.users.cache.array().length} users`);
     console.log(`${client.user.username}`);
     console.log(`${client.user.tag}`);
 };
