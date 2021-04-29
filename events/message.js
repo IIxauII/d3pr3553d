@@ -8,7 +8,7 @@ const admin1 = adminConfig.admins.user1; // user1
 const admin2 = adminConfig.admins.user2; // user2
 
 exports.run = (client, message) => {
-    console.log('recieved a message!');
+    //console.log('recieved a message!');
     // console.log(message.author.id);
     if (message.author.id === 474670778248331276) {
         const attachments = message.attachments.array();

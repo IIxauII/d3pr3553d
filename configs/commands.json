@@ -1,4 +1,7 @@
 {
+    "admin": [
+        "deleteguild.js"
+    ],
     "basic": [
         "hello.js",
         "help.js",
@@ -18,6 +21,9 @@
         "infou.js",
         "readjson.js",
         "uptime.js"
+    ],
+    "mirroring": [
+        "mirrorguild.js"
     ],
     "music": [
         "add.js",
